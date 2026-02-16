@@ -5,22 +5,36 @@ body {
     background-color: #f2f2f2;
 }
 .mainlogo{
-    max-width: 55%;
-    max-height: 15%;
+    height: 110px;
+    width: auto;
+    max-width: 420px;
     display: block;
-    margin: 0 auto 10px auto;
+    margin: 0 auto;
 }
 
+@media (min-width: 1024px) {
+    .mainlogo { height: 140px; }
+}
+.tagline {
+    margin: 6px 0 0;
+    color: white;
+    font-size: 16px;
+}
 header {
-    background-image: url(images/stripes2.jpg);
+    background-image: -webkit-image-set(url(images/stripes7@2x.webp) 2x, url(images/stripes7.webp) 1x);
+    background-image: image-set(url(images/stripes7@2x.webp) 2x, url(images/stripes7.webp) 1x);
+    background-repeat: no-repeat;
+    background-position: bottom;
     background-size: cover;
-    background-position: center;
     padding: 20px;
     position: relative;
     text-align: center;
     font-size: large;
     color: white;
-    
+    min-height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 nav {
