@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<TYPE html>
 <html>
 <head>
     <title>Contact | Fredericks Lawncare</title>
@@ -30,27 +31,63 @@
         <a href="contact.html">Contact</a>
     </nav>
 
-    <section>
+    <section style="text-align: center;">
         <h2>Contact Us</h2>
 
-        <p>Phone: (812) 230-6271</p>
-        <p>Email: frederickslawncare@yahoo.com</p>
-        <p>Hours: Monday – Saturday, 8am – 6pm</p>
+        <table>
+            <tr>
+                <td>Phone:</td>
+                <td>(812) 230-6271</td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>frederickslawncare@yahoo.com</td>
+            </tr>
+            <tr>
+                <td>Hours:</td>
+                <td>Monday – Saturday, 8am – 6pm</td>
+            </tr>
+        </table>
 
         <h3>Send Us a Message</h3>
 
-        <form>
+        <form id="contactForm" style="display: inline-block; text-align: left;">
             <label>Your Name:</label><br>
-            <input type="text" required><br><br>
+            <input type="text" id="name"><br><br>
 
             <label>Your Email:</label><br>
-            <input type="email" required><br><br>
+            <input type="text" id="email"><br><br>
 
             <label>Your Message:</label><br>
-            <textarea rows="5" cols="30" required></textarea><br><br>
+            <textarea rows="5" cols="30" id="message"></textarea><br><br>
 
-            <button type="submit">Send</button>
+            <button type="button" onclick="sendForm()">Send</button>
         </form>
+
+        <div id="successMsg" style="display:none; background-color:#90EE90; padding:15px; margin:10px 0; border-radius:5px; color:green; font-weight:bold;">
+            Message sent successfully! We'll get back to you soon.
+        </div>
+
+        <script>
+            function sendForm() {
+                var name = document.getElementById("name").value;
+                var email = document.getElementById("email").value;
+                var message = document.getElementById("message").value;
+
+                if (name == "" || email == "" || message == "") {
+                    alert("Please fill out all fields");
+                    return;
+                }
+
+                if (email.indexOf("@") == -1) {
+                    alert("Please enter a valid email");
+                    return;
+                }
+
+                document.getElementById("contactForm").style.display = "none";
+                document.getElementById("successMsg").style.display = "block";
+            }
+        </script>
 
     </section>
 

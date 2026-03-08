@@ -199,9 +199,9 @@ h2 {
 }
 
 .contact-button {
-    display: inline-block;
+    display: block;
     padding: 15px 40px;
-    margin-top: 15px;
+    margin: 15px auto;
     background-color: green;
     color: white;
     text-decoration: none;
@@ -212,6 +212,7 @@ h2 {
     letter-spacing: 0.3px;
     transition: background-color 140ms ease, transform 120ms ease, box-shadow 140ms ease;
     cursor: pointer;
+    width: fit-content;
 }
 
 .contact-button:hover {
@@ -262,4 +263,15 @@ footer {
     color: white;
     padding: 10px;
     margin-top: 20px;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    margin: 20px auto;
+}
+
+table td {
+    border: 1px solid black;
+    padding: 10px;
 }
